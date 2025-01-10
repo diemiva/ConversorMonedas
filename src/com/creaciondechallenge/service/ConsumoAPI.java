@@ -1,4 +1,4 @@
-package com.aluracursos.service;
+package com.creaciondechallenge.service;
 
 import java.io.IOException;
 import java.net.URI;

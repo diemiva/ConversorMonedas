@@ -1,6 +1,6 @@
-package com.aluracursos;
+package com.creaciondechallenge;
 
-import com.aluracursos.service.ConsumoAPI;
+import com.creaciondechallenge.service.ConsumoAPI;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Principal {
         var json = consumoApi.obtenerDatos("https://v6.exchangerate-api.com/v6/2af5d634e8802e113764bb59/pair/EUR/GBP");
         System.out.println(json);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         int opcion;
         System.out.println("**** Menu del conversor de monedas **** \n");
         do {
@@ -23,7 +23,7 @@ public class Principal {
             System.out.println("7) Salir\n");
             System.out.print("Elija una opción válida: ");
 
-            opcion = scanner.nextInt();
+            opcion = teclado.nextInt();
 
             switch (opcion) {
                 case 1:
