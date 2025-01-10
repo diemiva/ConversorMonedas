@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Conversor {
 
-    private final String URL_API = "https://v6.exchangerate-api.com/v6/";
-    private final String API_KEY = "2af5d634e8802e113764bb59";
+    private static final String URL_API = "https://v6.exchangerate-api.com/v6/";
+    private static final String API_KEY = "2af5d634e8802e113764bb59";
 
-    public void convertidor(ConsumoAPI consumoAPI, String monedaBase, String monedaAConvertir, Scanner teclado) {
+    public static void convertidor(ConsumoAPI consumoAPI, String monedaBase, String monedaAConvertir, Scanner teclado) {
         System.out.println("Digite el valor a convertir: ");
         double valor = teclado.nextDouble();
         var json = consumoAPI.obtenerDatos(URL_API+API_KEY+"/pair/"+monedaBase + "/"+ monedaAConvertir);
@@ -19,7 +19,7 @@ public class Conversor {
         try{
             double tasa =  extrayendoTasa(json);
             double resultado = valor * tasa;
-            System.out.println("El valor convertido es: " + resultado + monedaAConvertir);
+            System.out.println("El valor convertido es: " + resultado + " " +  monedaAConvertir + "\n");
         }catch (Exception e){
             System.out.println("Error al obtener el valor para convertir");
         }

@@ -12,8 +12,9 @@ public class Principal {
 
         Scanner teclado = new Scanner(System.in);
         int opcion;
-        System.out.println("**** Menu del conversor de monedas **** \n");
+
         do {
+            System.out.println("**** Menu del conversor de monedas **** \n");
             System.out.println("1) Dólar =>> Peso argentino");
             System.out.println("2) Peso argentino =>> Dólar");
             System.out.println("3) Dólar =>> Real brasileño");
@@ -27,32 +28,40 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
-                    // Lógica para convertir de dólar a peso argentino
+
                     System.out.println("Has seleccionado la opción de convertir de dólar a peso argentino.");
-                    // Aquí iría el código para realizar la conversión
+                    Conversor.convertidor(consumoApi,"USD","ARS",teclado);
                     break;
                 case 2:
-                    // Lógica para convertir de peso argentino a dólar
                     System.out.println("Has seleccionado la opción de convertir de peso argentino a dólar.");
-                    // Aquí iría el código para realizar la conversión
+                    Conversor.convertidor(consumoApi,"ARS","USD",teclado);
                     break;
                 case 3:
                     System.out.println("Has seleccionado la opción de convertir de dólar a real brasileño");
+                    Conversor.convertidor(consumoApi,"USD","BRL",teclado);
                     break;
                 case 4:
                     System.out.println("Has seleccionado la opción de convertir de real brasileño a dolar");
+                    Conversor.convertidor(consumoApi,"BRL","USD",teclado);
+
                     break;
                 case 5:
                     System.out.println("Has seleccionado la opción de convertir de dólar a peso colombiano");
+                    Conversor.convertidor(consumoApi,"USD","COP",teclado);
+
                     break;
                 case 6:
                     System.out.println("Has seleccionado la opción de convertir de peso colombiano a dolar");
+                    Conversor.convertidor(consumoApi,"COP","USD",teclado);
+                    break;
+
                 case 7:
-                    System.out.println("¡Salir!");
+                    System.out.println("¡Gracias por usar nuestro programa!");
                     break;
                 default:
                     System.out.println("Opción inválida. Por favor, elige una opción del 1 al 7.");
             }
         } while (opcion != 7);
+        teclado.close();
     }
 }
