@@ -7,9 +7,6 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         var consumoApi  = new ConsumoAPI();
-        var json = consumoApi.obtenerDatos("https://v6.exchangerate-api.com/v6/2af5d634e8802e113764bb59/pair/EUR/GBP");
-        System.out.println(json);
-
         Scanner teclado = new Scanner(System.in);
         int opcion;
 
